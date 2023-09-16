@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<body>
+    <div id="container" class="main">
+        <h1>My List</h1>
+        <ul id="myList">
+            <li id="first" class="item">list-1 Lorem ipsum</li>
+            <li id="second" class="item">list-2 Ipsam in</li>
+            <li class="item">list-3 Dignissimos, obcaecati</li>
+            <li class="item">list-4 Doloribus maxime</li>
+            <li class="item">list-5 Doloremque quasi</li>
+        </ul>
+        <button id="btn">Add New</button>
+
+        <p style="margin-top: 20px;">Main Advantage is if we want to add eventHandler with 1000 child,</p>
+        <p>we use event bullling and we add event in parent level.</p>
+        <p></p>
+
+    </div>
+
+    <script>
+
+        var addNew = document.getElementById('btn')
+        addNew.addEventListener('click', function() {
+            var itemParents = document.getElementById('myList')
+            var newItem = document.createElement('li')
+            newItem.innerText = 'brand new item'
+            itemParents.appendChild(newItem)
+        })
+
+        document.getElementById('myList').addEventListener('click', function(event) {
+            event.target.parentNode.removeChild(event.target);
+        })
+        
+    </script>
+</body>
+</html>
